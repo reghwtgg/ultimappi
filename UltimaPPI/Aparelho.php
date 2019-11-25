@@ -12,50 +12,98 @@
  * @author 2017315018
  */
 class Aparelho {
+
     private $id_aparelho;
     private $id_cliente;
     private $modelo;
     private $marca;
     private $imei;
-    function getId_aparelho() {
+
+    public function getId_aparelho() {
         return $this->id_aparelho;
     }
 
-    function getId_cliente() {
+    public function getId_cliente() {
         return $this->id_cliente;
     }
 
-    function getModelo() {
+    public function getModelo() {
         return $this->modelo;
     }
 
-    function getMarca() {
+    public function getMarca() {
         return $this->marca;
     }
 
-    function getImei() {
+    public function getImei() {
         return $this->imei;
     }
 
-    function setId_aparelho($id_aparelho) {
+    public function setId_aparelho($id_aparelho) {
         $this->id_aparelho = $id_aparelho;
     }
 
-    function setId_cliente($id_cliente) {
+    public function setId_cliente($id_cliente) {
         $this->id_cliente = $id_cliente;
     }
 
-    function setModelo($modelo) {
+    public function setModelo($modelo) {
         $this->modelo = $modelo;
     }
 
-    function setMarca($marca) {
+    public function setMarca($marca) {
         $this->marca = $marca;
     }
 
-    function setImei($imei) {
+    public function setImei($imei) {
         $this->imei = $imei;
     }
+   
+      public function consultar($conexao) {
+        $statement = $conexao->prepare("SELECT * FROM aparelho WHERE id_aparelho=:id");
+        $statement->bindValue(":id", $this->id_aparelho);
+        $executou = $statement->execute();
+        if ($executou == false) {
+            throw new Exception("Erro ao consultar produto!<br>" . $statement->errorInfo()[2]);
+        }
+        $aparelho = $statement->fetchObject("Aparelho");
+        $this->id_aparelho = $aparelho->getId_aparelho();
+        $this->id_cliente = $aparelho->getId_cliente();
+        $this->modelo = $aparelho->getModelo();
+        $this->marca = $aparelho->getMarca();
+        $this->imei = $aparelho->getImei();
+    }
+    public function salvar($conexao) {
+        if (!is_numeric($this->id)) {
 
+            $statement = $conexao->prepare("INSERT INTO aparelho (id_cliente,modelo,marca,imei) VALUES (:id_cliente,:modelo,:marca,:imei)");
+            $statement->bindValue(":id_cliente", $this->id_cliente);
+            $statement->bindValue(":modelo", $this->modelo);
+            $statement->bindValue(":marca", $this->marca);
+            $statement->bindValue(":imei", $this->imei);
+            $salvou = $statement->execute();
+        } else {
+            $statement = $conexao->prepare("UPDATE aparelho SET id_cliente=:id_cliente, modelo=:modelo, marca=:marca,imei=:imei WHERE id=:id");
+            $statement->bindValue(":id", $this->id_aparelho);
+            $statement->bindValue(":id_cliente", $this->id_cliente);
+            $statement->bindValue(":modelo", $this->modelo);
+            $statement->bindValue(":marca", $this->marca);
+            $statement->bindValue(":imei", $this->imei);
+            $salvou = $statement->execute();
+        }
+        
+    } 
+    public function excluir($conexao) {
+        $statement = $conexao->prepare("DELETE FROM aparelho WHERE id_aparelho=:id");
+        $statement->bindValue(":id", $this->id_aparelho);
+        $deletou = $statement->execute();
+
+        if ($deletou == true) {
+            header("Location: lista_aparelho.php");
+        } else {
+            $erro = "Erro ao deletar contato! " . $statement->errorInfo()[2];
+            include_once 'erro.php';
+        }
+    }
 
 }

@@ -11,9 +11,12 @@ and open the template in the editor.
     </head>
     <body>
         
-        <a href="lista_clientes.php"> Listar Clientes</a>
-        <a href="lista_aparelho.php"> Listar Aparelhos</a>
-        <a href="form-cliente.php"> Cadastrar Clientes</a>
+        <a href="lista_clientes.php"> Listar Clientes</a><br>
+        <a href="lista_aparelho.php"> Listar Aparelhos</a><br>
+         <a href="lista_os.php"> Listar Os</a><br>
+        <a href="form-cliente.php"> Cadastrar Clientes</a><br>
+        <a href="form-aparelho.php"> Cadastrar Aparelhos</a><br>
+        <a href="form-os.php"> Cadastrar Ordem de Serviço</a><br>
       
         
     </body>

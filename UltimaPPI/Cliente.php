@@ -20,51 +20,51 @@ class Cliente {
     private $endereco;
     private $bairro;
 
-    function getId() {
+    public function getId() {
         return $this->id;
     }
 
-    function getNome() {
+     public function getNome() {
         return $this->nome;
     }
 
-    function getTelefone() {
+     public function getTelefone() {
         return $this->telefone;
     }
 
-    function getDocumento() {
+     public function getDocumento() {
         return $this->documento;
     }
 
-    function getEndereco() {
+     public function getEndereco() {
         return $this->endereco;
     }
 
-    function getBairro() {
+     public function getBairro() {
         return $this->bairro;
     }
 
-    function setId($id) {
+    public  function setId($id) {
         $this->id = $id;
     }
 
-    function setNome($nome) {
+   public function setNome($nome) {
         $this->nome = $nome;
     }
 
-    function setTelefone($telefone) {
+     public function setTelefone($telefone) {
         $this->telefone = $telefone;
     }
 
-    function setDocumento($documento) {
+     public function setDocumento($documento) {
         $this->documento = $documento;
     }
 
-    function setEndereco($endereco) {
+     public function setEndereco($endereco) {
         $this->endereco = $endereco;
     }
 
-    function setBairro($bairro) {
+     public function setBairro($bairro) {
         $this->bairro = $bairro;
     }
 

@@ -23,8 +23,8 @@
                 echo "<td>" . $Aparelho->getModelo() . "</td>";
                 echo "<td>" . $Aparelho->getMarca() . "</td>";
                 echo "<td>" . $Aparelho->getImei() . "</td>";            
-                echo '<td><a href=alterarController.php?id=' . $Aparelho->getId_aparelho() . '>Alterar</a></td>';
-                echo '<td> <a href=excluirController.php?id=' . $Aparelho->getId_aparelho() . '>excluir</a></td>';
+                echo '<td><a href=alterarControllerAparelho.php?id=' . $Aparelho->getId_aparelho() . '>Alterar</a></td>';
+                echo '<td> <a href=excluirControllerAparelho.php?id=' . $Aparelho->getId_aparelho() . '>excluir</a></td>';
                 echo "</tr>";
             }
             ?>
