@@ -8,16 +8,38 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link href="estilo.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        
-        <a href="lista_clientes.php"> Listar Clientes</a><br>
-        <a href="lista_aparelho.php"> Listar Aparelhos</a><br>
-         <a href="lista_os.php"> Listar Os</a><br>
-        <a href="form-cliente.php"> Cadastrar Clientes</a><br>
-        <a href="form-aparelho.php"> Cadastrar Aparelhos</a><br>
-        <a href="form-os.php"> Cadastrar Ordem de Serviço</a><br>
-      
-        
+        <div class="dropdown">
+            <button class="dropbtn">Home</button>
+            <button class="dropbtn">Clientes</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="lista_clientes.php"> Cadastrados</a></li>
+                        <li><a href="form-cliente.php"> Cadastrar</a></li>
+                    </ul>
+                </div>
+            <button class="dropbtn">Aparelhos</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="lista_aparelho.php">Cadastrados</a></li>
+                        <li><a href="form-aparelho.php"> Cadastrar </a></li>
+                    </ul>
+                </div>
+            <button class="dropbtn">Ordem de Serviços</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="lista_os.php">Cadastrados</a></li>
+                        <li><a href="form-os.php"> Cadastrar </a></li>
+                    </ul>
+                </div>
+        </div>
+        <div id="corpo">
+            
+        </div>
+        <div id="rodape">
+            
+        </div>
     </body>
 </html>
