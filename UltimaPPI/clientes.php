@@ -26,7 +26,7 @@
                 echo "<td>" . $Cliente->getDocumento() . "</td>";
                 echo "<td>" . $Cliente->getEndereco() . "</td>";
                 echo "<td>" . $Cliente->getBairro() . "</td>";
-                echo '<td><a href=lista_aparelhos.php?id=' . $Cliente->getId() . '>Lista</a></td>';
+                echo '<td><a href=lista_aparelho.php?id=' . $Cliente->getId() . '>Lista</a></td>';
                 echo '<td><a href=alterarController.php?id=' . $Cliente->getId() . '>Alterar</a></td>';
                 echo '<td> <a href=excluirController.php?id=' . $Cliente->getId() . '>excluir</a></td>';
                 echo "</tr>";

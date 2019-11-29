@@ -68,15 +68,34 @@ class Os {
         $this->estado = $estado;
     }
 
+  public function consultar($conexao) {
+        $statement = $conexao->prepare("SELECT * FROM os WHERE id_os=:id");
+        $statement->bindValue(":id", $this->id_os);
+        $executou = $statement->execute();
+        if ($executou == false) {
+            throw new Exception("Erro ao consultar produto!<br>" . $statement->errorInfo()[2]);
+        }
+        $os = $statement->fetchObject("Os");
+        $this->id_os = $os->getId_os();
+        $this->id_cliente = $os->getId_cliente();
+        $this->id_aparelho = $os->getId_aparelho();
+        $this->descricao = $os->getDescricao();
+        $this->valor = $os->getValor();
+                $this->estado = $os->getEstado();
+
+        
+    }
     public function salvar($conexao) {
-        if (!is_numeric($id)) {
+        if (!is_numeric($this->id_os)) {
 
             $statement = $conexao->prepare("INSERT INTO os (id_cliente,id_aparelho,descricao,valor,estado) VALUES (:id_cliente,:id_aparelho,:descricao,:valor,:estado)");
+
             $statement->bindValue(":id_cliente", $this->id_cliente);
             $statement->bindValue(":id_aparelho", $this->id_aparelho);
             $statement->bindValue(":descricao", $this->descricao);
             $statement->bindValue(":valor", $this->valor);
             $statement->bindValue(":estado", $this->estado);
+
             $salvou = $statement->execute();
         } else {
             $statement = $conexao->prepare("UPDATE os SET id_cliente=:id_cliente, id_aparelho=:id_aparelho,descricao=:descricao,valor=:valor,estado=:estado WHERE id_os=:id");
@@ -90,7 +109,6 @@ class Os {
         }
         if ($salvou == false) {
             throw new Exception("Erro ao gravar o produto!<br>" . $statement->errorInfo()[2]);
-            include_once 'erro.php';
         }
     }
 

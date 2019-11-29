@@ -13,7 +13,7 @@
                 <th>Descrição </th>
                 <th>Valor</th>
                 <th>Estado</th>
-                <th>Aparelhos</th>
+               
                 <th>Alterar</th>
                 <th>Excluir</th>
             </tr>
@@ -26,7 +26,6 @@
                 echo "<td>" . $os->getDescricao() . "</td>";
                 echo "<td>" . $os->getEstado() . "</td>";
                 echo "<td>" . $os->getValor() . "</td>";
-                echo '<td><a href=lista_os.php?id=' . $os->getId_os() . '>Lista</a></td>';
                 echo '<td><a href=alterarControllerOs.php?id=' . $os->getId_os() . '>Alterar</a></td>';
                 echo '<td> <a href=excluirControllerOs.php?id=' . $os->getId_os() . '>excluir</a></td>';
                 echo "</tr>";

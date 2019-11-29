@@ -16,7 +16,7 @@
             Valor: <input value="<?php echo (isset($os)) ? $os->getValor() : ""; ?>" type="text" name="valor"><br>
             Estado/Status : <input value="<?php echo (isset($os)) ? $os->getEstado() : ""; ?>" type="text" name="estado"><br>
            <input type="submit" value="Salvar Contato">
-            <a href=" index.php">Inicial</a> 
+     
         </form>
         
     <?php  include 'lista_clientes.php' ?>
