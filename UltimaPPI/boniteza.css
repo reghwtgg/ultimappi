@@ -7,41 +7,54 @@ and open the template in the editor.
     Created on : 26/11/2019, 10:57:13
     Author     : 2017315018
 */
-*{margin: 0; padding: 0;}
+*{
+	margin: 0; 
+	padding: 0;
+	list-style-type:none;}
  
 body{
-font-family: arial, helvetica, sans-serif;
-font-size: 12px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	text-align: center;
 }
  
 .menu{
-list-style:none; 
-border:1px solid #c0c0c0; 
-float:left; 
+	list-style:none; 
+	border:1px solid #c0c0c0; 
+	float:left; 
+
 }
 
 .menu li{
-position:relative; 
-float:left; 
-border-right:1px solid #c0c0c0; 
+	position:relative; 
+	float:left; 
+	border-right:1px solid #c0c0c0; 
 }
 
-.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+.menu li a{
+	color:#333; 
+	text-decoration:none; 
+	padding:10px 15px; 
+	display:block;
+	text-decoration: none;
+}
  
 .menu li a:hover{
-background:#333; 
-color:#fff; 
--moz-box-shadow:0 3px 10px 0 #CCC; 
--webkit-box-shadow:0 3px 10px 0 #ccc; 
-text-shadow:0px 0px 5px #fff; 
+	background:#333; 
+	color:#fff; 
+	-moz-box-shadow:0 3px 10px 0 #CCC; 
+	-webkit-box-shadow:0 3px 10px 0 #ccc; 
+	text-shadow:0px 0px 5px #fff; 
+	text-decoration: none;
 }
 
 .menu li  ul{
-position:absolute; 
-top:25px; 
-left:0;
-background-color:#fff; 
-display:none;
+	position:absolute; 
+	top:35px; 
+	left:0px;
+	background-color:#fff; 
+	display:none;
 }
 
 .menu li:hover ul, .menu li.over ul{display:block;}
@@ -53,3 +66,19 @@ width:150px;
 }
 
 /*https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205*/
+
+#cabeca{
+	margin: 0.5% 30%;
+	background-color:   #BBFFFF;
+}
+#cabeca img{
+	margin: 0.1% 35%;
+}
+#corpo {
+	margin: 0.5% 30%;
+}
+form{
+	width: 60%;
+	margin:5% 24% 10% 23%;
+
+}

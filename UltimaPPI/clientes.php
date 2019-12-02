@@ -1,10 +1,12 @@
 
 <html>
     <head>
-        <title>Essa</title>
+        <title>Clientes - ECELL</title>
         <meta charset="UTF-8">
+        <link href="boniteza.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        
         <table border="1">
             <tr>
                 <th>Id</th>
@@ -32,8 +34,11 @@
                 echo "</tr>";
             }
             ?>
-            <a href="index.php">Inicial</a>
+            
         </table>
+        <br>
+        <br>
+        <a href="index.php">Inicial</a>
     </body>
 </html>
 
