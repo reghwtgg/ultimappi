@@ -10,7 +10,9 @@ and open the template in the editor.
 *{
 	margin: 0; 
 	padding: 0;
-	list-style-type:none;}
+	list-style-type:none;
+	text-decoration: none;
+}
  
 body{
 	font-family: arial, helvetica, sans-serif;
@@ -21,32 +23,35 @@ body{
  
 .menu{
 	list-style:none; 
-	border:1px solid #c0c0c0; 
+	border:1px solid #fff; 
 	float:left; 
-
+	background-color: #343469;
+	padding-right: 58%;
 }
 
 .menu li{
 	position:relative; 
 	float:left; 
-	border-right:1px solid #c0c0c0; 
+	border-right:1px solid #fff;
+
 }
 
 .menu li a{
-	color:#333; 
+	color:#fff; 
 	text-decoration:none; 
 	padding:10px 15px; 
 	display:block;
 	text-decoration: none;
+	background:#343469;
+
 }
  
 .menu li a:hover{
-	background:#333; 
-	color:#fff; 
-	-moz-box-shadow:0 3px 10px 0 #CCC; 
-	-webkit-box-shadow:0 3px 10px 0 #ccc; 
+	background:#fff; 
+	color:#343469; 
 	text-shadow:0px 0px 5px #fff; 
 	text-decoration: none;
+	border-right:1px solid #fff;
 }
 
 .menu li  ul{
@@ -60,25 +65,54 @@ body{
 .menu li:hover ul, .menu li.over ul{display:block;}
 
 .menu li ul li{
-border:1px solid #c0c0c0; 
-display:block; 
-width:150px;
+	border:1px solid #343469; 
+	display:block; 
+	width:150px;
 }
 
 /*https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205*/
 
 #cabeca{
-	margin: 0.5% 30%;
-	background-color:   #BBFFFF;
+	margin: 0.5% 27%;
+	background-color:#BBFFFF;
 }
 #cabeca img{
 	margin: 0.1% 35%;
 }
 #corpo {
 	margin: 0.5% 30%;
+
 }
 form{
 	width: 60%;
 	margin:5% 24% 10% 23%;
 
+}
+/*T A B E L A*/
+table{
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+
+td,th {
+  border: 1px solid #BBFFFF;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #343469;
+  color: white;
+
+}
+table a{
+	color: black;
 }

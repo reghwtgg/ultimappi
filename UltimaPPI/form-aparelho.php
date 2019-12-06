@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Aparelhos - ECELL</title>
+        <title>Home - ECELL</title>
         <link href="boniteza.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -18,7 +18,7 @@ and open the template in the editor.
 
             <div class="menu">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="#">Clientes</a>
                         <ul>
                             <li><a href="lista_clientes.php"> Cadastrados</a></li>
@@ -39,12 +39,11 @@ and open the template in the editor.
                     </li>
                 </ul>
             </div>
+
         </div>
-            <br>
+        <br><br><br>
         <div id="corpo">
-            
                 <form method="POST" action="salvarControllerAparelho.php" class="form-horizontal">
-                    <br><br>
                     <fieldset>
                         <br>
                         <div class="form-group">
@@ -53,6 +52,7 @@ and open the template in the editor.
                                 <input value="<?php echo (isset($aparelho)) ? $aparelho->getId_aparelho() : ""; ?>" type="hidden" name="id" class="form-control"/></label>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="col-lg-2 control-label">ID: </label>
                             <div class="col-lg-10">
@@ -60,6 +60,7 @@ and open the template in the editor.
                             </div>
                         </div>
                         <br>
+
                         <div class="form-group">
                             <label class="col-lg-2 control-label">ID Cliente: </label>
                             <div class="col-lg-10">
@@ -67,6 +68,7 @@ and open the template in the editor.
                             </div>
                         </div>
                         <br>
+
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Modelo : </label>
                             <div class="col-lg-10">
@@ -74,6 +76,7 @@ and open the template in the editor.
                             </div>
                         </div>
                         <br>
+
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Marca: </label>
                             <div class="col-lg-10">
@@ -81,12 +84,14 @@ and open the template in the editor.
                             </div>
                         </div>
                         <br>
+
                         <div class="form-group">
                             <label class="col-lg-2 control-label">IMEI : </label>
                             <div class="col-lg-10">
                                 <input value="<?php echo (isset($aparelho)) ? $aparelho->getImei() : ""; ?>" type="text" name="imei" class="form-control"/>
                             </div>
                         </div>
+
                         <br>
                         <br>
                         <input type="submit" value="Salvar Contato">
@@ -94,8 +99,8 @@ and open the template in the editor.
                         <br>
                     </fieldset>
                 </form>
-            <?php  include 'lista_clientes.php' ?>
             
+            </div>
         </div>
         
     
