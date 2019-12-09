@@ -81,7 +81,7 @@ class Os {
         $this->id_aparelho = $os->getId_aparelho();
         $this->descricao = $os->getDescricao();
         $this->valor = $os->getValor();
-                $this->estado = $os->getEstado();
+        $this->estado = $os->getEstado();
 
         
     }

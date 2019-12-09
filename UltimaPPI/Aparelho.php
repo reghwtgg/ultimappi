@@ -74,16 +74,15 @@ class Aparelho {
         $this->imei = $aparelho->getImei();
     }
     public function salvar($conexao) {
-        if (!is_numeric($this->id)) {
-
-            $statement = $conexao->prepare("INSERT INTO aparelho (id_cliente,modelo,marca,imei) VALUES (:id_cliente,:modelo,:marca,:imei)");
+        if (!is_numeric($this->id_aparelho)) {
+            $statement = $conexao->prepare("INSERT INTO aparelho (id_cliente,modelo,marca,imei) VALUES (:id_cliente,:modelo,:marca,:imei)");  
             $statement->bindValue(":id_cliente", $this->id_cliente);
             $statement->bindValue(":modelo", $this->modelo);
             $statement->bindValue(":marca", $this->marca);
             $statement->bindValue(":imei", $this->imei);
             $salvou = $statement->execute();
         } else {
-            $statement = $conexao->prepare("UPDATE aparelho SET id_cliente=:id_cliente, modelo=:modelo, marca=:marca,imei=:imei WHERE id=:id");
+            $statement = $conexao->prepare("UPDATE aparelho SET id_cliente=:id_cliente, modelo=:modelo, marca=:marca,imei=:imei WHERE id_aparelho=:id");
             $statement->bindValue(":id", $this->id_aparelho);
             $statement->bindValue(":id_cliente", $this->id_cliente);
             $statement->bindValue(":modelo", $this->modelo);

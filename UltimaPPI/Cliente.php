@@ -83,15 +83,14 @@ class Cliente {
         $this->bairro = $cliente->getBairro();
     }
 
-    public function salvar($conexao) {
-        if (!is_numeric($id)) {
-
-            $statement = $conexao->prepare("INSERT INTO cliente (nome,telefone,endereco,documento,bairro) VALUES (:nome,:telefone,:endereco,:documento,:bairro)");
+   public function salvar($conexao) {
+        if (!is_numeric($this->id)) {
+            $statement = $conexao->prepare("INSERT INTO cliente (nome,telefone,endereco,documento,bairro) VALUES (:nome,:telefone,:endereco,:documento,:bairro)");       
             $statement->bindValue(":nome", $this->nome);
             $statement->bindValue(":telefone", $this->telefone);
             $statement->bindValue(":endereco", $this->endereco);
-            $statement->bindValue(":documento", $this->bairro);
-            $statement->bindValue(":bairro", $this->bairro);
+            $statement->bindValue(":documento", $this->documento);
+            $statement->bindValue(":bairro", $this->bairro); 
             $salvou = $statement->execute();
         } else {
             $statement = $conexao->prepare("UPDATE cliente SET nome=:nome, telefone=:telefone,endereco=:endereco,documento=:documento,bairro=:bairro WHERE id=:id");
@@ -99,7 +98,7 @@ class Cliente {
             $statement->bindValue(":nome", $this->nome);
             $statement->bindValue(":telefone", $this->telefone);
             $statement->bindValue(":endereco", $this->endereco);
-            $statement->bindValue(":documento", $this->bairro);
+            $statement->bindValue(":documento", $this->documento);
             $statement->bindValue(":bairro", $this->bairro);
             $salvou = $statement->execute();
         }
